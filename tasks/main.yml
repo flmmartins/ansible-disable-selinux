@@ -1,0 +1,10 @@
+---
+- name: Install libselinux to disable selinux
+  yum:
+    pkg=libselinux-python
+    state=present
+  sudo: yes
+
+- name: Disable selinux
+  selinux: state=disabled
+  sudo: yes
